@@ -51,5 +51,8 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
-        
+
+    - name: Image digest
+      run: echo @{{ steps.build-and-publish.outputs.digest}}
+
 
